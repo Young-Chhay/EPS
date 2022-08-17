@@ -83,6 +83,28 @@
                                 </div>
                             </div>
                         </div>
+                        
+
+                    <script>
+                      var token = 'Bearer PjOwDFQyFkQ_WZFfYK2LiW5I9e4PpMCNEQ_woFiQWcoAenAkmkecKIYRwfzklCZ3qw-hIOoiErHC4yz_ZFuTJJSUfydr0ewE72Hc3AEw7i9fRspYRuUHhcpn4br1YnYx'
+
+                        var yelpSearchUrl = 'https://api.yelp.com/v3/businesses/search'
+
+                        var requestObj = {
+                            url: yelpSearchUrl,
+                            data: {term: 'restaurants', location: 'Irvine'},
+                            headers: {'Authorization': token},
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                console.log('AJAX error, jqXHR = ', jqXHR, ', textStatus = ', textStatus, ', errorThrown = ', errorThrown)
+                            } 
+                        }
+
+                        $.ajax(requestObj) 
+                            .done(function(response) {
+                                console.log('typeof response = ' + typeof response)
+                                console.log('response = ', response)
+                            })
+                    </script>
     </main>
   </body>
 </html>
