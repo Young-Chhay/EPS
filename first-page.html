@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- cannot use bootstrap for framework/ needs to be re-edited -->
+
+<head>
+  <!-- Link To BULMA FRAMEWORK -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eat Play Stay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="./assets/css/jass.css" /> -->
+  <link rel="stylesheet" href="./asset/css/first-page.css" />
+</head>
+
+<body>
+  <!-- <div class="flex-row align-center justify-center min-100-vh bg-primary"> -->
+  <div class="col-10 col-md-5 flex-column align-center bg-light p-5">
+    <header class="jumbotron">Eat Play Stay</header>
+    <p>Can't decide where to go or what to do on your next vacation?<br> Let Eat Play Stay help you figure out your
+      perfect
+      ideal vacation getaway! <br><br>
+      <a href="https:googlemaps.com">Google Maps</a> <br>
+    </p>
+    <form id="search-form" class="form w-100"> <br>
+      <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
+      <select id="format-input" class="form-input w-100">
+        <option value="" disabled selected>plan your trip</option>
+        <option value="restaurants">Restaurants</option>
+        <option value="activities">Activites</option>
+        <option value="hotels">Hotels</option>
+        <a href="https:googlemaps.com">Plan a Road Trip</a>
+
+      </select>
+      <button class="btn btn-info btn-block">Search</button>
+    </form>
+  </div>
+  </div>
+
+  <section class="card">
+    <header>San Francisco</header>
+    <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=San+Francisco%2C+CA">
+      <img src="asset/images/sf.jpg" alt="Golden Gate Bridge" /></a>
+    <p>Golden Gate Bridge</p>
+  </section>
+
+  <section class="card">
+    <header>Los Angeles</header>
+    <a href="https://www.santamonica.com/things-to-do/">
+      <img src="asset/images/sm_pier_entrance.jpg" alt="Santa Monica Pier" /></a>
+    <p>Santa Monica Pier</p>
+    <!-- <p>the top rated #1 yelp restaurants api key data</p> -->
+  </section>
+
+  <section class="card">
+    <header>San Diego</header>
+    <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=san+diego">
+      <img src="asset/images/san-diego-zoo.jpg" alt="Golden Gate Bridge" /></a>
+    <p>San Diego Zoo</p>
+
+  </section>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

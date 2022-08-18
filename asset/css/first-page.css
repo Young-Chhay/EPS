@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  font-family: Arial;
+  margin: 0;
+} */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: smokewhite;
+  color: #333;
+}
+
+header {
+  padding: 60px;
+  text-align: center;
+  background: #13293D;
+  color: #fff;
+}
+
+.container {
+  display: flexbox;
+  max-width: 800px;
+  margin: auto;
+}
+
+.container>div {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  background: #13293D;
+}
+
+.container>div:first-child {
+  border-right: 1px solid #fff;
+}
+
+.card {
+  background: smokewhite;
+  border-style: black;
+  border-width: 1px;
+  padding: 20px;
+  float: left;
+  width: 25%;
+  margin: 10px;
+  text-align: center;
+  color: #333;
+}
+
+/* create a box shadow for the 3 photos when you hover over them */
+.card:hover {
+  box-shadow: 0 0 20px rgba(39, 6, 141, 0.5);
+}
+
+.card>h1 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.card>p {
+  font-size: 15px;
+  margin-bottom: 0;
+
+}
+
+.card header {
+  padding: 20px;
+}
+
+.card header h1 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.card header p {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.card p {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card img:hover {
+  width: 100%;
+}
