@@ -77,6 +77,7 @@ function indoorYelpApi(city) {
 }
 
 
+<<<<<<< HEAD
 function restaurantYelpApi(city) {
   
   var restaurantSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=restaurants&sort_by=rating'
@@ -153,6 +154,9 @@ function renderRestaurants (eatResults) {
   // TO DO: Plug price into Eat Card
 
 }
+=======
+
+>>>>>>> 107526f034608e3888d1ad9675d7b5365a8612fa
 // var cityResponse = [
 //     {
 //         city: "New York City",
