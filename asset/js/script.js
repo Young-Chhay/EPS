@@ -23,6 +23,8 @@ var indoorCategories = ['rock_climbing', 'axethrowing', 'aquariums', 'arcades', 
 function outdoorYelpApi(city) {
   
   // TO DO: Randomize 3 outdoor and define variables
+  randomOutdoor = outdoorCategories.sort( function() { Math.random() + .5 }); 
+  randomIndoor = indoorCategories.sort( function() { Math.random() + .5 });
   
   var outdoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + outdoorCategory1 + '&categories=' + outdoorCategory2 + '&categories=' + outdoorCategory3
 
@@ -75,7 +77,6 @@ function indoorYelpApi(city) {
   console.log(e);
   });
 }
-
 
 
 // var cityResponse = [
