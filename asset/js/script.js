@@ -3,9 +3,17 @@ console.log(api.key);
 console.log(`https://api.yelp.com/v3/businesses/search`);
 
 // Moment statement for day and time 
+
 moment(Date);
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 // variables
+var cityRestaurantEl = $('#city-restaurant')
+var firstEatNameEl = $("#first-eat-name")
+var firstEatImgEl = $("#first-eat-img")
+var firstEatRatingEl = $("#first-eat-rating")
+var firstEatPriceEl = $("#first-eat-price")
+var firstEatUrlEl = $("#first-eat-url")
+
 // var searchButton = $(".searchButton")
 // var apiKey = ""
 // var searchInput = ""
@@ -78,6 +86,9 @@ function indoorYelpApi(city) {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 function restaurantYelpApi(city) {
   
   var restaurantSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=restaurants&sort_by=rating'
@@ -95,6 +106,10 @@ function restaurantYelpApi(city) {
   if (response.ok) {
       response.json().then(function (eatResults) {
       console.log(eatResults);
+<<<<<<< HEAD
+=======
+      renderRestaurants(eatResults)
+>>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
       });
   } else {
       alert('Error: ' + response.statusText);
@@ -105,8 +120,11 @@ function restaurantYelpApi(city) {
   });
   }
 
+<<<<<<< HEAD
 restaurantYelpApi("Irvine");
 
+=======
+>>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 function hotelYelpApi(city) {
   
   var hotelSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=hotels&sort_by=rating'
@@ -133,14 +151,20 @@ function hotelYelpApi(city) {
   console.log(e);
   });
   }
+<<<<<<< HEAD
 
 hotelYelpApi("Irvine");
+=======
+  // hotelYelpApi("Irvine");
+restaurantYelpApi("Irvine");
+>>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 
 function renderRestaurants (eatResults) {
   var firstEatName = eatResults.businesses[0].name
   var firstEatImg = eatResults.businesses[0].image_url
   var firstEatRating = eatResults.businesses[0].rating
   var firstEatPrice = eatResults.businesses[0].price
+<<<<<<< HEAD
 
   // TO DO : Clicking image should link to Yelp review
   var firstEatUrl = eatResults.businesses[0].url
@@ -155,6 +179,28 @@ function renderRestaurants (eatResults) {
 
 }
 =======
+=======
+  var firstEatUrl = eatResults.businesses[0].url
+  
+  // Plug city name into Eat Card (placeholder of Irvine)
+  cityRestaurantEl.text(`Top Rated Restaurants in Irvine`)
+
+  // Plug name into Eat Card 
+  firstEatNameEl.text(firstEatName);
+
+  // Plug image URL into Eat Card 
+  firstEatImgEl.attr('src',firstEatImg); 
+
+  //  Clicking image should link to Yelp review
+  firstEatUrlEl.attr('href', firstEatUrl);
+
+  // Plug rating into Eat Card
+  firstEatRatingEl.text(`Rating: ${firstEatRating}`);
+
+  // Plug price into Eat Card
+  firstEatPriceEl.text(`Price: ${firstEatPrice}`);
+}
+>>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 
 >>>>>>> 107526f034608e3888d1ad9675d7b5365a8612fa
 // var cityResponse = [
