@@ -4,6 +4,7 @@
     <title>Eat Play Stay search page</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./asset/css/second-page.css" />
   </head>
   <body>  
@@ -19,17 +20,20 @@
             <h5 class="card-title mt-2 text-center">Live Forecast: Temp here<icons/h5>
             
     </header>
-   
+  
     <main>
 
 
 <!-- restaurants card -->
       <section class="card">
-        <header>The Top Rated Restaurants</header>
-        <a href="https://www.yelp.com/search?cflt=restaurants&find_loc=Irvine%2C+CA">
-        <img src="./asset/images/couple dining.jpg" alt="couple dining at fancy Restaurants" /></a>
-        <p>Dine & Wine at Local Hot Spots</p>
-        <p>the top rated #1 yelp restaurants api key data</p>
+        <h2 id="city-restaurant"></h2>
+        <h3 id="first-eat-name">Name</h3>
+
+        <a id="first-eat-url" target="_blank"> 
+          <img id="first-eat-img"/></img>
+        </a>
+        <p id="first-eat-rating">Rating: </p>
+        <p id="first-eat-price">Price: </p>
       </section>
       
 <!-- activities card -->
@@ -64,7 +68,8 @@
   </body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./asset/js/second-page.js"></script>
+  <script src="./asset/js/config.js"></script>
+  <script src="./asset/js/asset/js/second-page.js"></script>
 
   
 </html>
