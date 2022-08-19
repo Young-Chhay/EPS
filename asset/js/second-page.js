@@ -37,7 +37,7 @@ for (var i = 0; i < localStorage.length; i++) {
 searchButton.click(function () {
 
     var searchCity = $(".searchCity").val();
-    
+
 
     // live weather
     var currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&Appid=" + apiKey + "&units=imperial";
@@ -49,7 +49,7 @@ searchButton.click(function () {
         $.ajax({
             method: "GET",
             url: currentWeather
-           
+
         }).then(function (response) {
             // console.log(response.name);
             var cityName = $(".list-cities");
@@ -73,11 +73,11 @@ searchButton.click(function () {
             currentCity.append(liveTemp);
             liveTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
 
-    
+
         });
 
-       
-        
+
+
     }
 });
 
@@ -117,5 +117,3 @@ searchButton.click(function () {
 
 //     }
 //
-
-
