@@ -1,106 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- cannot use bootstrap for framework/ needs to be re-edited -->
 
 <head>
-  <!-- Link To BULMA FRAMEWORK -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eat Play Stay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-    rel="stylesheet" />
-  <!-- <link rel="stylesheet" href="./assets/css/jass.css" /> -->
-  <link rel="stylesheet" href="./asset/css/first-page.css" />
+  <!-- Link to Bulma fro Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="asset/css/first-page.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <!-- <div class="flex-row align-center justify-center min-100-vh bg-primary"> -->
-<<<<<<< HEAD
-  <div class="col-10 col-md-5 flex-column align-center bg-light p-5">
-    <header class="jumbotron">Eat Play Stay</header>
-    <p>Can't decide where to go or what to do on your next vacation?<br> Let Eat Play Stay help you figure out your
-      perfect
-      ideal vacation getaway! <br><br>
-    <p>Plan a roadtrip with Google Maps</p>
-    <a href="https:googlemaps.com">Google Maps</a> <br>
-    </p>
-    <form id="search-form" class="form w-100"> <br>
-      <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
-      <select id="format-input" class="form-input w-100">
-        <option value="" disabled selected>plan your trip</option>
-        <option value="restaurants">Restaurants</option>
-        <option value="activities">Activites</option>
-        <option value="hotels">Hotels</option>
-        <a href="https:googlemaps.com">Plan a Road Trip</a>
+  <header>
+    <!-- Create a Light and Dark Mode switch -->
+    <div class="switch">
+      <div class="flicker"></div>
+      <div class="moon"></div>
+    </div>
+  </header>
 
-      </select>
-      <button class="btn btn-info btn-block">Search</button>
-    </form>
-  </div>
-=======
-    <div class="col-10 col-md-5 flex-column align-center bg-light p-5">
-      <header class="jumbotron">Eat Play Stay Search</header>
-      <p>Can't decide where to go or what to do on your next vacation? Let Eat Play Stay help you figure out your perfect ideal vacation getaway!
-
+  <section class="main">
+    <div class="main-text">
+      <h1>Eat Play Stay</h1>
+      <p>
+        Eat Play Stay is a website that helps travelers who are looking for a place to eat, things to do, and
+        places to stay.
       </p>
+      <br />
       <form id="search-form" class="form w-100">
         <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
+        <button class="btn btn-block btn-danger">&rarr; Search</button><br><br>
+        <!-- <a href="#footer">Click here to search for a city</a> <br><br><br> -->
+        <div class="menu" id="menu">
+
+          <!-- <a href="index.html">Home</a> <br> -->
+          <a href="#footer">About</a> <br>
+          <a href="#footer">Contact</a>
+          <!--Weather forecast result which will show content based on info pulled from api-->
+          <section id="weather" class="weather section">
+            <div class="weather-container container">
+              <div class="section weather-section has-text-centered has-background-info-light" id="weather-card">
+                <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
+                  Weather Forecast
+                </p>
+                <div id="weathercard" class="forecast-container">
+                  <p style="color:black;">Get ready for your vacation and check the weather!</p>
+                  <div id="todaycontainer" class="todaycontainer">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- <div class="hero-image">
+            <img src="images/CA_State.jpg" alt="California" /></a> -->
+            <!-- <div class="cube" id="react"></div>
+            <div class="cube" id="javascript"></div>
+            <div class="cube" id="html"></div> -->
+            <!-- <div class="cube" id="css"></div> -->
+        </div>
+  </section>
+  <!-- <form id="search-form" class="form w-100">
+        <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
         <select id="format-input" class="form-input w-100">
-          <option value="" disabled selected>plan your trip</option>
-          <option value="restaurants">Restaurants</option>
-          <option value="activities">Activites</option>
-          <option value="hotels">Hotels</option>
-        
-        </select>
-        <!-- <button class="btn btn-info btn-block">Search</button> -->
-        <!-- <button type="submit" class="searchButton">Search</button> -->
-        <a href="./second-page.html" class="btn btn-block btn-danger">&rarr; Search</a>
+            <option value="" disabled selected>plan your trip</option>
+            <option value="restaurants">Restaurants</option>
+            <option value="activities">Activites</option>
+            <option value="hotels">Hotels</option> -->
+
+  <!-- Create sub-section for LA,SD,SF -->
+  <section class="sub-section">
+    <!-- <div class="square" id="rest">
+      <h2>New York City</h2>
+      <p>Best Things to do in New York City</p>
+      <br />
+      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=new+york+city"> Click here</a>
+      <img src="asset/images/NYC.jpg" alt="NYC Skyline" /></a>
+    </div> -->
 
 
-      </form>
+
+
+    <!-- restaurants card -->
+    <div class="card">
+      <h2 id="city-restaurant"></h2>
+      <h3 id="first-eat-name">Name</h3>
+
+      <a id="first-eat-url" target="_blank">
+        <img id="first-eat-img" /></img>
+      </a>
+      <p id="first-eat-rating">Rating: </p>
+      <p id="first-eat-price">Price: </p>
     </div>
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
-  </div>
 
-  <section class="card">
-    <header>San Francisco</header>
-    <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=San+Francisco%2C+CA">
-<<<<<<< HEAD
-      <img src="asset/images/sf.jpg" alt="Golden Gate Bridge" /></a>
-=======
-    <img src="./asset/images/sf.jpg" alt="Golden Gate Bridge" /></a>
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
-    <p>Golden Gate Bridge</p>
+    <!-- activities card -->
+    <div class="card">
+      <header>Adventure Time</header>
+      <a href="https://vacationidea.com/california/best-places-to-visit-in-southern-california.html">
+        <img src="./asset/images/HB.jpg" alt="huntington beach pier or mountain picture" /></a>
+      <p>Surf, Hike & so much more</p>
+      <p>*yelp #1 activity review insert yelp api key*</p>
+    </div>
+    <!-- <div class="square" id="OC">
+      <h2>Irvine</h2>
+      <p>Best Things to do in Irvine</p>
+      <br />
+      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=Irvine%2C+CA">Click
+        here</a>
+      <img src="asset/images/OC_Fair.webp" alt="Orange County Fair" /></a>
+    </div> -->
+
+    <!-- hotel card -->
+    <div class="card">
+      <header>Hotels Accommodations</header>
+      <a href="https://luxuryhotel.guru/orange-county/unique_hotels/">
+        <img src="./asset/images/hotel.jpg" alt="hotel by the beach" /></a>
+      <p>Find rentals, cabins, or unique homes & experiences</p>
+      <p>*#1 hotel review api key data*</p>
+    </div>
+
+    <!-- <div class="square" id="LA">
+      <h2>Seattle</h2>
+      <p>Best things to do in Seattle</p>
+      <br />
+      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=Seattle%2C+WA">Click here</a>
+      <img src="asset/images/Seattle.jpg" alt="Seattle Space Needle" /></a>
+    </div>
+    <div class="square" id="SF">
+      <h2>San Francisco</h2>
+      <p>Best things to do in San Francisco</p>
+      <br />
+      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=San+Francisco%2C+CA">Click
+        here</a>
+      <img src="asset/images/SF_GG_Bridge.webp" alt="Golden Gate Bridge" /></a>
+    </div> -->
   </section>
 
-  <section class="card">
-    <header>Los Angeles</header>
-    <a href="https://www.santamonica.com/things-to-do/">
-<<<<<<< HEAD
-      <img src="asset/images/sm_pier_entrance.jpg" alt="Santa Monica Pier" /></a>
-=======
-    <img src="./asset/images/sm_pier_entrance.jpg" alt="Santa Monica Pier" /></a>
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
-    <p>Santa Monica Pier</p>
-    <!-- <p>the top rated #1 yelp restaurants api key data</p> -->
-  </section>
+  <footer id="footer">
 
-  <section class="card">
-    <header>San Diego</header>
-    <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=san+diego">
-<<<<<<< HEAD
-      <img src="asset/images/san-diego-zoo.jpg" alt="Golden Gate Bridge" /></a>
-=======
-    <img src="./asset/images/san-diego-zoo.jpg" alt="Golden Gate Bridge" /></a>
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
-    <p>San Diego Zoo</p>
 
-  </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./asset/js/config.js"></script>
-  <script src="./asset/js/script.js"></script>
-</body>
+    <p>eps@gmail.com
+      <br />
+      (999) 999-9999
+    </p>
+  </footer>
+
+
+  <script src="asset/js/first-page.js"></script>
 
 </html>

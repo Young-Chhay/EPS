@@ -29,9 +29,9 @@ var outdoorCategories = ['hiking', 'beaches', 'amusementparks', 'zoos', 'farms',
 var indoorCategories = ['rock_climbing', 'axethrowing', 'aquariums', 'arcades', 'escapegames', 'shopping', 'trampoline', 'museums', 'theater', 'virtualrealitycenters']
 
 function outdoorYelpApi(city) {
-  
+
   // TO DO: Randomize 3 outdoor and define variables
-  
+
   var outdoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + outdoorCategory1 + '&categories=' + outdoorCategory2 + '&categories=' + outdoorCategory3
 
   console.log(outdoorSearchUrl)
@@ -40,26 +40,26 @@ function outdoorYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
-  .then(function (response) { 
-  if (response.ok) {
-      response.json().then(function (data) {
-      console.log(data);
-      });
-  } else {
-      alert('Error: ' + response.statusText);
-  }
-  })
-  .catch(function (e) {
-  console.log(e);
-  });
-  }
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
+}
 
 function indoorYelpApi(city) {
 
-   // TO DO: Randomize 3 indoor and define
+  // TO DO: Randomize 3 indoor and define
 
   var indoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + indoorCategory1 + '&categories=' + indoorCategory2 + '&categories=' + indoorCategory3
 
@@ -67,30 +67,26 @@ function indoorYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
-  .then(function (response) { 
-  if (response.ok) {
-      response.json().then(function (data) {
-      console.log(data);
-      });
-  } else {
-      alert('Error: ' + response.statusText);
-  }
-  })
-  .catch(function (e) {
-  console.log(e);
-  });
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 function restaurantYelpApi(city) {
-  
+
   var restaurantSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=restaurants&sort_by=rating'
 
   console.log(restaurantSearchUrl)
@@ -99,34 +95,26 @@ function restaurantYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
-  .then(function (response) { 
-  if (response.ok) {
-      response.json().then(function (eatResults) {
-      console.log(eatResults);
-<<<<<<< HEAD
-=======
-      renderRestaurants(eatResults)
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
-      });
-  } else {
-      alert('Error: ' + response.statusText);
-  }
-  })
-  .catch(function (e) {
-  console.log(e);
-  });
-  }
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (eatResults) {
+          console.log(eatResults);
+          renderRestaurants(eatResults)
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
+}
 
-<<<<<<< HEAD
-restaurantYelpApi("Irvine");
-
-=======
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 function hotelYelpApi(city) {
-  
+
   var hotelSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=hotels&sort_by=rating'
 
   console.log(hotelSearchUrl)
@@ -135,53 +123,32 @@ function hotelYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
-  .then(function (response) { 
-  if (response.ok) {
-      response.json().then(function (stayResults) {
-      console.log(stayResults);
-      });
-  } else {
-      alert('Error: ' + response.statusText);
-  }
-  })
-  .catch(function (e) {
-  console.log(e);
-  });
-  }
-<<<<<<< HEAD
-
-hotelYelpApi("Irvine");
-=======
-  // hotelYelpApi("Irvine");
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (stayResults) {
+          console.log(stayResults);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
+}
+// hotelYelpApi("Irvine");
 restaurantYelpApi("Irvine");
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 
-function renderRestaurants (eatResults) {
+function renderRestaurants(eatResults) {
   var firstEatName = eatResults.businesses[0].name
   var firstEatImg = eatResults.businesses[0].image_url
   var firstEatRating = eatResults.businesses[0].rating
   var firstEatPrice = eatResults.businesses[0].price
-<<<<<<< HEAD
-
-  // TO DO : Clicking image should link to Yelp review
   var firstEatUrl = eatResults.businesses[0].url
 
-  // TO DO: Plug name into Eat Card 
-
-  // TO DO: Plug image URL into Eat Card 
-
-  // TO DO: Plug rating into Eat Card
-
-  // TO DO: Plug price into Eat Card
-
-}
-=======
-=======
-  var firstEatUrl = eatResults.businesses[0].url
-  
   // Plug city name into Eat Card (placeholder of Irvine)
   cityRestaurantEl.text(`Top Rated Restaurants in Irvine`)
 
@@ -189,7 +156,7 @@ function renderRestaurants (eatResults) {
   firstEatNameEl.text(firstEatName);
 
   // Plug image URL into Eat Card 
-  firstEatImgEl.attr('src',firstEatImg); 
+  firstEatImgEl.attr('src', firstEatImg);
 
   //  Clicking image should link to Yelp review
   firstEatUrlEl.attr('href', firstEatUrl);
@@ -200,9 +167,7 @@ function renderRestaurants (eatResults) {
   // Plug price into Eat Card
   firstEatPriceEl.text(`Price: ${firstEatPrice}`);
 }
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 
->>>>>>> 107526f034608e3888d1ad9675d7b5365a8612fa
 // var cityResponse = [
 //     {
 //         city: "New York City",
