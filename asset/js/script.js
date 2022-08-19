@@ -28,13 +28,20 @@ var outdoorCategories = ['hiking', 'beaches', 'amusementparks', 'zoos', 'farms',
 
 var indoorCategories = ['rock_climbing', 'axethrowing', 'aquariums', 'arcades', 'escapegames', 'shopping', 'trampoline', 'museums', 'theater', 'virtualrealitycenters']
 
+function getMultipleRandom(arr, num) {
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+  return shuffled.slice(0, num);
+}
+
+var randomOutDoorCategories = getMultipleRandom(outdoorCategories, 3);
+var randomInDoorCategories = getMultipleRandom(indoorCategories, 3);
+
 function outdoorYelpApi(city) {
   
   // TO DO: Randomize 3 outdoor and define variables
-  randomOutdoor = outdoorCategories.sort( function() { Math.random() + .5 }); 
-  randomIndoor = indoorCategories.sort( function() { Math.random() + .5 });
-  
-  var outdoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + outdoorCategory1 + '&categories=' + outdoorCategory2 + '&categories=' + outdoorCategory3
+ 
+  var outdoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + randomOutDoorCategories[0] + '&categories=' + randomOutDoorCategories[1] + '&categories=' + randomOutDoorCategories[2]
 
   console.log(outdoorSearchUrl)
 
@@ -57,13 +64,15 @@ function outdoorYelpApi(city) {
   .catch(function (e) {
   console.log(e);
   });
-  }
+};
+outdoorYelpApi('Irvine');
 
 function indoorYelpApi(city) {
 
    // TO DO: Randomize 3 indoor and define
 
-  var indoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + indoorCategory1 + '&categories=' + indoorCategory2 + '&categories=' + indoorCategory3
+  var indoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + randomInDoorCategories[0] + '&categories=' + randomInDoorCategories[1] + '&categories=' + randomInDoorCategories[2]
+  console.log(indoorSearchUrl)
 
   fetch(indoorSearchUrl, {
     method: 'GET',
@@ -85,10 +94,10 @@ function indoorYelpApi(city) {
   console.log(e);
   });
 }
+indoorYelpApi("Irvine");
 
-
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 function restaurantYelpApi(city) {
   
   var restaurantSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=restaurants&sort_by=rating'
@@ -172,7 +181,7 @@ function renderRestaurants (eatResults) {
   firstEatPriceEl.text(`Price: ${firstEatPrice}`);
 }
 
->>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
+// >>>>>>> 1f788785579936522e575d6ae65c096c9aea672c
 // var cityResponse = [
 //     {
 //         city: "New York City",
