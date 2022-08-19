@@ -14,10 +14,20 @@
       <p id="currentDay" class="lead"></p>
       <a href="./first-page.html" class="btn btn-block btn-danger">&larr; Go back.</a>
 
-      <!-- <p>live weather forecast display here</p> -->
-      <div class="card" style="width: 16rem;">
-        <div class="card-body bg-light">
-            <h5 class="card-title mt-2 text-center">Live Forecast: Temp here<icons/h5>
+ <!--Weather forecast result which will show content based on info pulled from api-->
+ <section id="weather" class="weather section">
+  <div class="weather-container container">
+    <div class="section weather-section has-text-centered has-background-info-light" id="weather-card">
+      <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
+          Weather Forecast
+      </p>
+      <div id="weathercard" class="forecast-container">
+        <p style="color:black;">Get ready for your vacation and check the weather!</p>
+        <div id="todaycontainer" class="todaycontainer">
+    </div>
+  </div>
+  
+</section>
             
     </header>
   
@@ -66,10 +76,13 @@
 
     </main>
   </body>
+
+  <a class="top" href="#top">Back To Top</a>
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./asset/js/config.js"></script>
-  <script src="./asset/js/asset/js/second-page.js"></script>
+  <script src="./asset/js/second-page.js"></script>
 
   
 </html>
