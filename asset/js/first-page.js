@@ -5,22 +5,27 @@ const switchElement = document.querySelector('.switch')
 switchElement.addEventListener('click', () => {
   document.body.classList.toggle('dark')
 })
-
 var searchFormEl = $('#search-form');
 
 function handleSearchFormSubmit(event) {
   event.preventDefault();
 
-  var searchInputVal = $('#search-input').value();
-  // var formatInputVal = document.querySelector('#format-input').value;
+  var searchInputVal = $('#search-input').val();
 
   if (!searchInputVal) {
     return;
   } else {
-    var city = searchInputVal
-    console.log(city);
-    localStorage.setItem('cities', city);
+
+  var city = searchInputVal
+  console.log(city);
+  localStorage.setItem('cities', city);
+  // restaurantYelpApi(city);
   }
+  var queryString = './second-page.html'
+
+  // location.assign(queryString);
+  fetchUrls (city);
+
   console.log(city);
 }
 
