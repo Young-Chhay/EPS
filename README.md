@@ -8,6 +8,7 @@
 ## Description
 Planning your next vacation? Need to step away from work for a bit? Eat Play Stay will help you get the results you need. Find the best hotels, restaurants, activites and weather forecasts by location and get away.
 
+
 Eat Play Stay is a search data base where users can plan their vacations using the openweather api forecast and yelp finder search features. EPS allows user to easily navigate for hotels, activites to do, restaurants to eat and knows the weather ahead of time to plan when is the best time to go. 
 
 ## Code Features:
@@ -33,23 +34,26 @@ Although the project seemed overwhelming at first, everyone helped each other an
 * Limited Free API's available for travel searches
 
 ## User Story
+
 * As A Traveler
 * I want to see the weather forecast for cities when I search for them so I can plan a trip accordingly
 * When I search for a city,
 * Then I am presented with current and 5 day weather conditions for that city and that city is added to the search history.
 * When the city is loaded,
 * Then Yelp will load review into 3 categories with pictures that have live links to take me to a Yelp Review website
+
   * Top #1 Rated Restaurant
   * Top #1 Activity
   * Top #1 Hotels to Stay
 
-## Collabortors
+## Collaborators
 * Jeffrey Sun
 * Young Chhay
 * Kevin Ng
 * Drum Holliday
 
 ## Resources Used
+* Visual Studio Code
 * Bulma Documentation
 * Yelp.com API
 * OpenWeather API

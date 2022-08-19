@@ -50,6 +50,52 @@ document.getElementById("formid").addEventListener('submit', function(event){
         previouslySavedCities.push(searchInput)
         localStorage.setItem("savedCities", JSON.stringify(previouslySavedCities))
 
+// Search button feature
+searchButton.click(function () {
+
+    var searchCity = $(".searchCity").val();
+
+
+    // live weather
+    var currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&Appid=" + apiKey + "&units=imperial";
+
+
+    if (searchCity == "") {
+        // console.log(searchCity);
+    } else {
+        $.ajax({
+            method: "GET",
+            url: currentWeather
+
+        }).then(function (response) {
+            // console.log(response.name);
+            var cityName = $(".list-cities");
+            cityName.append("<li>" + response.name + "</li>");
+            // Local storage
+            var local = localStorage.setItem(cityCount, response.name);
+            cityCount = cityCount + 1;
+
+            // current weather data 
+            var currentForecast = $(".currentForecast").append("<div>");
+            currentForecast.empty();
+            var currentCity = currentForecast.append("<p>");
+            currentForecast.append(currentCity);
+
+            // Adjust Date 
+            var timeUTC = new Date(response.dt * 1000);
+            currentCity.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
+            currentCity.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+            // temperature input
+            var liveTemp = currentCity.append("<p>");
+            currentCity.append(liveTemp);
+            liveTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
+
+
+        });
+
+
+
+    }
 });
 
 function getSavedCityWeather() {
@@ -162,3 +208,4 @@ $("#citiesList").on("submit", ".list-group-item", getSavedCityWeather)
 //     });
 
 // };
+
