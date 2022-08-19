@@ -43,6 +43,7 @@ var indoorCategories = ['rock_climbing', 'axethrowing', 'aquariums', 'arcades', 
 function outdoorYelpApi(city) {
   
   // TO DO: Randomize 3 outdoor and define categories 1 to 3 from in and outdoros
+
   var outdoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + outdoorCategory1 + '&categories=' + outdoorCategory2 + '&categories=' + outdoorCategory3
 
   console.log(outdoorSearchUrl)
@@ -51,27 +52,27 @@ function outdoorYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
-  .then(function (response) { 
-  if (response.ok) {
-      response.json().then(function (data) {
-      console.log(data);
-      });
-  } else {
-      alert('Error: ' + response.statusText);
-  }
-  })
-  .catch(function (e) {
-  console.log(e);
-  });
-  }
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
+}
 
   // Fetch indoor activity results
 function indoorYelpApi(city) {
 
-   // TO DO: Randomize 3 indoor and define
+  // TO DO: Randomize 3 indoor and define
 
   var indoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + indoorCategory1 + '&categories=' + indoorCategory2 + '&categories=' + indoorCategory3
 
@@ -79,21 +80,21 @@ function indoorYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
-  .then(function (response) { 
-  if (response.ok) {
-      response.json().then(function (data) {
-      console.log(data);
-      });
-  } else {
-      alert('Error: ' + response.statusText);
-  }
-  })
-  .catch(function (e) {
-  console.log(e);
-  });
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
 }
 
   // Fetch restaurant results
@@ -108,9 +109,10 @@ function restaurantYelpApi(city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
+
   .then(function (response) { 
   if (response.ok) {
       response.json().then(function (eatResults) {
@@ -138,9 +140,10 @@ function hotelYelpApi (city) {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + api.key,
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
     },
   })
+
   .then(function (response) { 
   if (response.ok) {
       response.json().then(function (stayResults) {
@@ -186,6 +189,7 @@ function renderRestaurants (eatResults) {
   // display image URL into eat card 
   eatImgEl.attr('src',eatImg); 
 
+
   // clicking image links to Yelp review
   eatUrlEl.attr('href', eatUrl);
 
@@ -230,28 +234,3 @@ function fetchUrls (city) {
   hotelYelpApi(city);
   restaurantYelpApi(city);
 }
-
-// var cityResponse = [
-//     {
-//         city: "New York City",
-//         activity: "Central Park",
-//         restaurant: "Joe's Shanghai",
-//         // weather: "live weather API Data"
-//     },
-
-//     {
-//         city: "Los Angeles",
-//         activity: "Santa Monica Pier",
-//         restaurant: "Honey Hi",
-//         // weather: "live weather API Data"
-
-//     },
-
-//     {
-//         city: "San Diego",
-//         activity: "Torrey Pines",
-//         restaurant: "Javier's - La Jolla"
-//         // weather: "live weather API Data"
-
-//     }
-// ]

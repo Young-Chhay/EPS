@@ -1,3 +1,10 @@
+// Create a constant to toggle the Switch button.
+const switchElement = document.querySelector('.switch')
+
+// IF a click is made on the switch button, the dark mode will be toggled
+switchElement.addEventListener('click', () => {
+  document.body.classList.toggle('dark')
+})
 var searchFormEl = $('#search-form');
 
 function handleSearchFormSubmit(event) {
@@ -8,6 +15,7 @@ function handleSearchFormSubmit(event) {
   if (!searchInputVal) {
     return;
   } else {
+
   var city = searchInputVal
   console.log(city);
   localStorage.setItem('cities', city);
@@ -17,6 +25,7 @@ function handleSearchFormSubmit(event) {
 
   // location.assign(queryString);
   fetchUrls (city);
+
   console.log(city);
 }
 
