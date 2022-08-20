@@ -6,7 +6,8 @@
   <title>Eat Play Stay</title>
   <!-- Link to Bulma fro Framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="asset/css/first-page.css" />
+  <link rel="stylesheet" href="./asset/css/style.css" />
+  <link rel="stylesheet" href="./asset/css/first-page.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -37,125 +38,107 @@
           <!-- <a href="index.html">Home</a> <br> -->
           <a href="#footer">About</a> <br>
           <a href="#footer">Contact</a>
+
           <!--Weather forecast result which will show content based on info pulled from api-->
-          <section id="weather" class="weather section">
-            <div class="weather-container container">
               <div class="section weather-section has-text-centered has-background-info-light" id="weather-card">
                 <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
                   Weather Forecast
                 </p>
                 <h4>Current Time &amp; Date: <span
                   id="time-display"> 00:00:00 </span></h4>
-                <div id="weathercard" class="forecast-container">
                   <p style="color:black;">Get ready for your vacation and check the weather!</p>
-                  <div id="todaycontainer" class="todaycontainer">
-                  </div>
+                  <div id="forecast-details">
+<!-- 
+                    <div id="forecast-one">
+                      <p id="temp-one"></p>
+                    </div>
+
+                    <div id="forecast-two">
+                      <p id="temp-two"></p>
+                    </div>
+
+                    <div id="forecast-three">
+                      <p id="temp-three"></p>
+                    </div>
+
+                    <div id="forecast-four">
+                      <p id="temp-four"></p>
+                    </div>
+
+                    <div id="forecast-five">
+                      <p id="temp-five"></p> -->
+                    </div>
+                  </div> 
+              
                 </div>
 
               </div>
 
             </div>
-
-            <!-- <div class="hero-image">
-            <img src="images/CA_State.jpg" alt="California" /></a> -->
-            <!-- <div class="cube" id="react"></div>
-            <div class="cube" id="javascript"></div>
-            <div class="cube" id="html"></div> -->
-            <!-- <div class="cube" id="css"></div> -->
         </div>
   </section>
-  <!-- <form id="search-form" class="form w-100">
-        <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
-        <select id="format-input" class="form-input w-100">
-            <option value="" disabled selected>plan your trip</option>
-            <option value="restaurants">Restaurants</option>
-            <option value="activities">Activites</option>
-            <option value="hotels">Hotels</option> -->
 
   <!-- Create sub-section for LA,SD,SF -->
   <section class="sub-section">
-    <!-- <div class="square" id="rest">
-      <h2>New York City</h2>
-      <p>Best Things to do in New York City</p>
-      <br />
-      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=new+york+city"> Click here</a>
-      <img src="asset/images/NYC.jpg" alt="NYC Skyline" /></a>
-    </div> -->
-
-
-
 
     <!-- restaurants card -->
-    <div class="card square">
-      <h2 id="city-restaurant"></h2>
-      <h3 id="first-eat-name">Eat Name</h3>
-
-      <a id="first-eat-url" target="_blank">
-        <img id="first-eat-img" /></img>
+    <div class="card is-flex">
+      <div class="card-content">
+      <h2 class ="card-header" id="city-restaurant"></h2>
+      <a id="eat-url" target="_blank">
+        <img class="card-image" id="eat-img"></img>
       </a>
-      <p id="first-eat-rating">Rating: </p>
-      <p id="first-eat-price">Price: </p>
+      
+        <h3 id="eat-name"></h3>
+        <p id="eat-category"></p>
+        <p id="eat-rating"></p>
+        <p id="eat-price"></p>
+      </div>
+      <button id="eat-refresh">Not Interested? Click to refresh</button>
     </div>
 
-    <!-- Out door activities card -->
+    <!-- Play card -->
     <div class="card square">
-      <h2 id="city-outdoor"></h2>
-      <h3 id="outdoor-name">Outdoor Name</h3>
+      <h2>Top Rated Activities</h2>
+      <div id="play-one">      
+        <a id="play-url-one" target="_blank">
+          <img id="play-img-one"></img>
+        </a>
+        <h3 id="play-name-one"></h3>
+        <p id="play-rating-one"></p>
+        <p id="play-price-one"></p>
+      </div>
 
-      <a id="outdoor-url" target="_blank">
-        <img id="outdoor-img" /></img>
-      </a>
-      <p id="outdoor-rating">Rating: </p>
-      <p id="outdoor-price">Price: </p>
+      <div id="play-two">      
+        <a id="play-url-two" target="_blank">
+          <img id="play-img-two"></img>
+        </a>
+        <h3 id="play-name-two"></h3>
+        <p id="play-rating-two"></p>
+        <p id="play-price-two"></p>
+      </div>  
+      <div id="play-three">      
+        <a id="play-url-three" target="_blank">
+          <img id="play-img-three"></img>
+        </a>
+        <h3 id="play-name-three"></h3>
+        <p id="play-rating-three"></p>
+        <p id="play-price-three"></p>
+      </div>
     </div>
-
-    <!-- indoor activities card -->
-    <div class="card square">
-      <h2 id="city-indoor"></h2>
-      <h3 id="indoor-name">Indoor Name</h3>
-
-      <a id="indoor-url" target="_blank">
-        <img id="indoor-img" /></img>
-      </a>
-      <p id="indoor-rating">Rating: </p>
-      <p id="indoor-price">Price: </p>
-    </div>
-    <!-- <div class="square" id="OC">
-      <h2>Irvine</h2>
-      <p>Best Things to do in Irvine</p>
-      <br />
-      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=Irvine%2C+CA">Click
-        here</a>
-      <img src="asset/images/OC_Fair.webp" alt="Orange County Fair" /></a>
-    </div> -->
 
     <!-- hotel card -->
     <div class="card">
       <h2 id="city-hotel"></h2>
-      <h3 id="hotel-name">City hotel Name</h3>
 
       <a id="hotel-url" target="_blank">
         <img id="hotel-img" /></img>
       </a>
-      <p id="hotel-rating">Rating: </p>
-      <p id="hotel-price">Price: </p>
+      <h3 id="hotel-name"></h3>
+      <p id="hotel-rating"></p>
+      <p id="hotel-price"></p>
     </div>
 
-    <!-- <div class="square" id="LA">
-      <h2>Seattle</h2>
-      <p>Best things to do in Seattle</p>
-      <br />
-      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=Seattle%2C+WA">Click here</a>
-      <img src="asset/images/Seattle.jpg" alt="Seattle Space Needle" /></a>
-    </div>
-    <div class="square" id="SF">
-      <h2>San Francisco</h2>
-      <p>Best things to do in San Francisco</p>
-      <br />
-      <a href="https://www.yelp.com/search?find_desc=things+to+do&find_loc=San+Francisco%2C+CA">Click
-        here</a>
-      <img src="asset/images/SF_GG_Bridge.webp" alt="Golden Gate Bridge" /></a>
-    </div> -->
   </section>
   
 </body>
