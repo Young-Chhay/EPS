@@ -1,6 +1,6 @@
 /* Creat a body class */
 
-body {
+/* body {
   transition: 0.3s;
   margin: 0;
   padding: 0;
@@ -31,7 +31,7 @@ a {
 
 .dark a {
   color: pink;
-}
+} */
 
 /* 
 p {
@@ -46,18 +46,18 @@ p {
 
 /* Make sure the switch for dark mode is always on the right */
 
-header {
+/* header {
   display: flex;
   justify-content: flex-end;
   padding: 30px;
-}
+} */
 
 /* .top-bar {
   float: left;
 } */
 
 /* Create a light and dark mode switch relative to the page instead of using flex display*/
-.switch {
+/* .switch {
   width: 80px;
   height: 40px;
   border-radius: 20px;
@@ -72,13 +72,13 @@ header {
   background-color: rgb(255, 255, 255);
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 5px; */
   /* box-shadow: inset 4px 4px 4px rgb(255, 255, 255);
   box-shadow: inset -4px -4px 4px rgb(195 193 198 / 90%); */
-}
+/* } */
 
 /* Create a "dark class" used in js*/
-.dark {
+/* .dark {
   background-color: rgb(57, 57, 57);
   transition: 0.3s;
 }
@@ -91,7 +91,7 @@ header {
   position: absolute;
   top: 5px;
   left: 45px;
-}
+} */
 
 /* .moon:hover {
   box-shadow: 4px 4px 0 0 rgb(168, 128, 227);
@@ -99,31 +99,31 @@ header {
 
 /* Get the element class "dark", and look for child with the class name "flicker" */
 /* Class "dark" is added from javascript */
-.dark .flicker {
-  transform: translateX(40px);
+/* .dark .flicker {
+  transform: translateX(40px); */
   /* transition: 0.3s; */
-}
+/* } */
 
 /* Make sure all the text changes so white when in dark mode */
-.dark>* {
+/* .dark>* {
   color: rgb(255, 255, 255)
-}
+} */
 
 /* Text size of main */
-.main {
+/* .main {
   height: 80vh;
   display: flex;
   flex-direction: row;
-}
+} */
 
 /* Text size of main-text */
-.main-text {
+/* .main-text {
   width: 50%;
   padding: 30px;
-}
+} */
 
 /* Set the size for eh class "square" */
-.card {
+/* .card {
   width: 98%;
   margin: 1%;
   height: 350px;
@@ -143,7 +143,7 @@ header {
 .sub-section {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 /* 
 .hero-image {
@@ -195,7 +195,7 @@ header {
 } */
 
 
-footer {
+/* footer {
   font-size: 40px;
   display: flex;
   justify-content: center;
@@ -206,13 +206,13 @@ footer {
 
 .dark footer {
   background-color: rgb(28, 28, 28);
-}
+} */
 
 /* Used to change the size when the page gets to 970 pixels so the squares collapse */
-@media only screen and (min-width: 970px) {
+/* @media only screen and (min-width: 970px) {
   .square {
     width: 48%;
     margin: 1%;
     height: 600px;
   }
-}
+} */

@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
   }
   
@@ -32,26 +32,27 @@
   
   .card img {
     width: 100%;
+    max-height: 200px;
   }
   
   /* Cards are split into two columns at 992px or smaller */
-  @media screen and (max-width: 992px) {
+  /* @media screen and (max-width: 992px) {
     .card {
       width: 50%;
     }
     /* Change the header color */
-    header {
+    /* header {
       background: #772014;
     }
   }
-  
+   */ 
   /* Cards are stacked on top of each other at 768px or smaller */
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     .card {
       width: 100%;
-    }
+    } */
     /* Change the header color */
-    header {
+    /* header {
       background: #8ac4ff;
     }
-  }
+  } */
