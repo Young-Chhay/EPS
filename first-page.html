@@ -44,30 +44,11 @@
                 <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
                   Weather Forecast
                 </p>
-                <h4>Current Time &amp; Date: <span
-                  id="time-display"> 00:00:00 </span></h4>
+                <!-- <h4>Current Time &amp; Date: <span
+                  id="time-display"> 00:00:00 </span></h4> -->
+                  <p id="currentDay" class="lead"></p>
                   <p style="color:black;">Get ready for your vacation and check the weather!</p>
-                  <div id="forecast-details">
-<!-- 
-                    <div id="forecast-one">
-                      <p id="temp-one"></p>
-                    </div>
-
-                    <div id="forecast-two">
-                      <p id="temp-two"></p>
-                    </div>
-
-                    <div id="forecast-three">
-                      <p id="temp-three"></p>
-                    </div>
-
-                    <div id="forecast-four">
-                      <p id="temp-four"></p>
-                    </div>
-
-                    <div id="forecast-five">
-                      <p id="temp-five"></p> -->
-                    </div>
+                 
                   </div> 
               
                 </div>
@@ -172,11 +153,9 @@
       </div>
       </div>
 
-
-
   </section>
 
-  <!-- Create sub-section for LA,SD,SF -->
+  <!-- Container for eat, play, stay cards -->
   <section class="sub-section">
 
     <!-- restaurants card -->
@@ -192,12 +171,11 @@
         <p id="eat-rating"></p>
         <p id="eat-price"></p>
       </div>
-      <button id="eat-refresh">Not Interested? Click to refresh</button>
     </div>
 
     <!-- Play card -->
-    <div class="card square">
-      <h2>Top Rated Activities</h2>
+    <div id="play-header" class="card square">
+  
       <div id="play-one">      
         <a id="play-url-one" target="_blank">
           <img id="play-img-one"></img>
@@ -224,7 +202,7 @@
         <p id="play-price-three"></p>
       </div>
     </div>
-
+    
     <!-- hotel card -->
     <div class="card">
       <h2 id="city-hotel"></h2>
@@ -254,6 +232,5 @@
   <script src="./asset/js/config.js"></script>
   <script src="./asset/js/script.js"></script>
   <script src="./asset/js/first-page.js"></script>
-
 
 </html>
