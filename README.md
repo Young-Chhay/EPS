@@ -1,6 +1,6 @@
 # Eat Play Stay
 ## Link's
-* ['Eat Play Stay -Github'](git hub link)
+* ['Eat Play Stay -Github'](https://github.com/Young-Chhay/EPS)
 * ['Eat Play Stay - Live Link] (EPS live link)
 
 <!-- screen shots here -->
