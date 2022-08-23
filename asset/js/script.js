@@ -48,7 +48,7 @@ var playPriceThreeEl = $("#play-price-three")
 var playUrlThreeEl = $("#play-url-three")
 
 // indoor play activity variables
-var playHeaderTwoEl = $("#play-header")
+var playHeaderTwoEl = $("#play-header-two")
 var playNameFourEl = $("#play-name-four")
 var playCategoryFourEl = $('#play-category-four')
 var playImgFourEl = $("#play-img-four")
@@ -436,7 +436,7 @@ function renderIndoor (indoorResult) {
   var indoorRatingOne = indoorList[0].rating
   var indoorPriceOne = indoorList[0].price
 
-  playHeaderTwoEl.text('Indoor Activities')
+  playHeaderTwoEl.text('Indoor Activities');
 
   // display activity name into play card
   playNameFourEl.text(indoorNameOne);
@@ -520,11 +520,11 @@ function handleSearchFormSubmit(event) {
 
   var city = searchInputVal
   localStorage.setItem('cities', city);
-  // getWeather(city);
-  // restaurantYelpApi(city);
-  // hotelYelpApi(city);
+  getWeather(city);
+  restaurantYelpApi(city);
+  hotelYelpApi(city);
   outdoorYelpApi(city);
-  // indoorYelpApi(city);
+  indoorYelpApi(city);
   }
 }
 
