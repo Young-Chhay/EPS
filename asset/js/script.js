@@ -4,7 +4,7 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 
 var searchButton = $("btn");
 var searchInput = "";
-
+var switchElement = $('switch-element');
 // weather variables
 var liveWeather = $(".weathericon");
 var liveTempEl = $("#todaytemp");
@@ -79,6 +79,10 @@ var hotelPriceEl = $("#hotel-price")
 var hotelUrlEl = $("#hotel-url")
 var searchFormEl = $('#search-form');
 
+// IF a click is made on the switch button, the dark mode will be toggled
+switchElement.click, () => {
+  document.body.classList.toggle('dark')
+}
 // Search button feature
 function getWeather (city) {
 
