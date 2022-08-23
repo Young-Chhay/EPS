@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Eat Play Stay</title>
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="./asset/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
   <header>
 
@@ -18,16 +20,15 @@
       <div class="moon"></div>
     </div>
   </header>
-  <section class="hero is-light is-half is-offset-one-quarter">
-    <!-- <div class="card-header-title"> -->
-    <!-- <h1 class="title">Eat Play Stay</h1> -->
-    <p class="content has-text-centered">
-      Eat Play Stay is a website that helps travelers who are looking for a place to eat, things to do, and
-      places to stay.
-    </p>
-    </div>
-    <br />
-    <div class="has-text-centered">
+
+  <section class="main">
+    <div class="main-text">
+      <h1>Eat Play Stay</h1>
+      <p>
+        Eat Play Stay is a website that helps travelers who are looking for a place to eat, things to do, and
+        places to stay.
+      </p>
+      <br />
       <form id="search-form" class="form w-100">
         <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
 
@@ -160,18 +161,20 @@
   <section class="sub-section">
 
     <!-- restaurants card -->
-    <div class="card is-centered">
-      <div class="card-content" id="card1">
-        <h2 class="card-header" id="city-restaurant"></h2> <br><br>
-        <a id="eat-url" target="_blank">
-          <img class="card-image" id="eat-img"></img>
-        </a>
+    <div class="card is-flex">
+      <div class="card-content">
+      <h2 class ="card-header" id="city-restaurant"></h2>
+      <a id="eat-url" target="_blank">
+        <img class="card-image" id="eat-img"></img>
+      </a>
+      
         <h3 id="eat-name"></h3>
         <p id="eat-category"></p>
         <p id="eat-rating"></p>
         <p id="eat-price"></p>
       </div>
     </div>
+
     <!-- Play card -->
     <div class="card square">
       <h2 id="play-header"> </h2>
@@ -242,6 +245,7 @@
     </div>
 
   </section>
+  
 </body>
 
   <footer id="footer">

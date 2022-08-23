@@ -529,4 +529,3 @@ function handleSearchFormSubmit(event) {
 }
 
 searchFormEl.submit(handleSearchFormSubmit);
-
