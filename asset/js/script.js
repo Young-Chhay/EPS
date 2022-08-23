@@ -67,7 +67,7 @@ var playUrlThreeEl = $("#play-url-three")
 // var indoorRatingEl = $("#indoor-rating")
 // var indoorPriceEl = $("#indoor-price")
 // var indoorUrlEl = $("#indoor-url")
-// var switchElement = $('.switch')
+var switchElement = $('#switch')
 
 // Stay variables
 var cityHotelEl = $('#city-hotel')
@@ -492,7 +492,7 @@ function renderRestaurants (eatResults) {
   } else {
   eatPriceEl.text(`Price: ${eatPrice}`);
   }
-  eatRefresh.on('click', renderRestaurants(eatResults));
+  // eatRefresh.on('click', renderRestaurants(eatResults));
 }
 
 // display hotel results to HTML

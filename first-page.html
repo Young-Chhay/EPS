@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <title>Eat Play Stay</title>
@@ -10,250 +9,263 @@
   <link rel="stylesheet" href="./asset/css/first-page.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-
 <body>
-  <header>
-    <!-- Create a Light and Dark Mode switch -->
-    <div class="switch">
-      <div class="flicker"></div>
-      <div class="moon"></div>
-    </div>
+  <div class="content has-text-centered"><br>
+    <p2 class="title">Eat Play Stay</p2>
+    <header>
+      <!-- <div class="content has-text-centered">
+      <h1 class="title">Eat Play Stay</h1> -->
+      <!-- Create a Light and Dark Mode switch -->
+      <div class="switch">
+        <div class="flicker"></div>
+        <div class="moon"></div>
+      </div>
+  </div>
   </header>
-
-  <section class="main">
-    <div class="main-text">
-      <h1>Eat Play Stay</h1>
-      <p>
-        Eat Play Stay is a website that helps travelers who are looking for a place to eat, things to do, and
-        places to stay.
-      </p>
-      <br />
+  <section class="hero is-light is-half is-offset-one-quarter">
+    <!-- <div class="card-header-title"> -->
+    <!-- <h1 class="title">Eat Play Stay</h1> -->
+    <p class="content has-text-centered">
+      Eat Play Stay is a website that helps travelers who are looking for a place to eat, things to do, and
+      places to stay.
+    </p>
+    </div>
+    <br />
+    <div class="has-text-centered">
       <form id="search-form" class="form w-100">
         <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
-
-        <button class="btn btn-block btn-danger">&rarr; Search</button><br><br>
+        <button class="">&rarr; Search</button><br><br>
         <!-- <a href="#footer">Click here to search for a city</a> <br><br><br> -->
         <div class="menu" id="menu">
-
           <!-- <a href="index.html">Home</a> <br> -->
-          <a href="#footer">About</a> <br>
-          <a href="#footer">Contact</a>
-
-          <!--Weather forecast result which will show content based on info pulled from api-->
-              <div class="section weather-section has-text-centered has-background-info-light" id="weather-card">
-                <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
-                  Weather Forecast
-                </p>
-                <h4>Current Time &amp; Date: <span
-                  id="time-display"> 00:00:00 </span></h4>
-                  <p style="color:black;">Get ready for your vacation and check the weather!</p>
-                  <div id="forecast-details">
-<!-- 
-                    <div id="forecast-one">
-                      <p id="temp-one"></p>
-                    </div>
-
-                    <div id="forecast-two">
-                      <p id="temp-two"></p>
-                    </div>
-
-                    <div id="forecast-three">
-                      <p id="temp-three"></p>
-                    </div>
-
-                    <div id="forecast-four">
-                      <p id="temp-four"></p>
-                    </div>
-
-                    <div id="forecast-five">
-                      <p id="temp-five"></p> -->
-                    </div>
-                  </div> 
-              
-                </div>
-
-              </div>
-
-            </div>
+          <button class="button is-info is-inverted"><a href="#footer">Contact Us</a></button><br> <br>
+          <!-- <a href="#footer"></a> <br><br> -->
         </div>
-
-<!-- displays 5 day forecast-->
-<h5 class="card-title mt-2 mr-5">5-Day Forecast: </h5>
-<div class="row">
+    </div>
+  </section>
+  <!-- Weather forecast result which will show content based on info pulled from api-->
+  <section id="weather" class="weather section">
+    <div class="weather-container container">
+      <div class="section weather-section has-text-centered" id="weather-card">
+        <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
+          Weather Forecast
+        </p>
+        <h8 class="timeStamp">Current Time &amp; Date: <span id="time-display"> 00:00:00 </span></h8>
+        <div id="weathercard" class="forecast-container">
+          <p style="color:black;">Get ready for your vacation and check the weather!</p>
+          <div id="todaycontainer" class="todaycontainer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- NEW HTML WEATHER  -->
+  <!-- displays 5 day forecast-->
+  <!-- <h5 class="card-title mt-2 mr-5">5-Day Forecast: </h5>
+  <div class="row">
     <div class="col fiveDayOne">
-
-        <div class="table">
-            <div class="forecast">
-              <div class="flex-row d-flex justify-content-between">
-                <div class="col-12 col-md-2">
-                  <div class="card card-style">
-                    <div id="day-1-div" class="card-body">
-                      <h3 class="dateText" id="day-1-date"></h3>
-                      <p>
-                        <img class="weathericon" id="icon-1">
-                      </p>
-                      <p>Temp: <span class="tempText" id="day-1-temp"></span>
-                      </p>
-                      <p>Wind: <span class="windText" id="day-1-wind"></span>
-                      </p>
-                      <p>Humidity: <span class="humidityText" id="day-1-humidity"></span>
-                      </p>
-                    </div>
-                  </div>
+      <div class="table">
+        <div class="forecast">
+          <div class="flex-row d-flex justify-content-between">
+            <div class="col-12 col-md-2">
+              <div class="card card-style">
+                <div id="day-1-div" class="card-body">
+                  <h3 class="dateText" id="day-1-date"></h3>
+                  <p>
+                    <img class="weathericon" id="icon-1">
+                  </p>
+                  <p>Temp: <span class="tempText" id="day-1-temp"></span>
+                  </p>
+                  <p>Wind: <span class="windText" id="day-1-wind"></span>
+                  </p>
+                  <p>Humidity: <span class="humidityText" id="day-1-humidity"></span>
+                  </p>
                 </div>
-                <div class="col-12 col-md-2">
-                  <div class="card card-style">
-                    <div id="day-2-div" class="card-body">
-                      <h3 class="dateText" id="day-2-date"></h3>
-                      <p>
-                        <img class="weathericon" id="icon-2">
-                      </p>
-                      <p>Temp: <span class="tempText" id="day-2-temp"></span>
-                      </p>
-                      <p>Wind: <span class="windText" id="day-2-wind"></span>
-                      </p>
-                      <p>Humidity: <span class="humidityText" id="day-2-humidity"></span>
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-2">
+              <div class="card card-style">
+                <div id="day-2-div" class="card-body">
+                  <h3 class="dateText" id="day-2-date"></h3>
+                  <p>
+                    <img class="weathericon" id="icon-2">
+                  </p>
+                  <p>Temp: <span class="tempText" id="day-2-temp"></span>
+                  </p>
+                  <p>Wind: <span class="windText" id="day-2-wind"></span>
+                  </p>
+                  <p>Humidity: <span class="humidityText" id="day-2-humidity"></span>
+                  </p>
                 </div>
-                <div class="col-12 col-md-2">
-                  <div class="card card-style">
-                    <div id="day-3-div" class="card-body">
-                      <h3 class="dateText" id="day-3-date"></h3>
-                      <p>
-                        <img class="weathericon" id="icon-3">
-                      </p>
-                      <p>Temp: <span class="tempText" id="day-3-temp"></span>
-                      </p>
-                      <p>Wind: <span class="windText" id="day-3-wind"></span>
-                      </p>
-                      <p>Humidity: <span class="humidityText" id="day-3-humidity"></span>
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-2">
+              <div class="card card-style">
+                <div id="day-3-div" class="card-body">
+                  <h3 class="dateText" id="day-3-date"></h3>
+                  <p>
+                    <img class="weathericon" id="icon-3">
+                  </p>
+                  <p>Temp: <span class="tempText" id="day-3-temp"></span>
+                  </p>
+                  <p>Wind: <span class="windText" id="day-3-wind"></span>
+                  </p>
+                  <p>Humidity: <span class="humidityText" id="day-3-humidity"></span>
+                  </p>
                 </div>
-                <div class="col-12 col-md-2">
-                  <div class="card card-style">
-                    <div id="day-4-div" class="card-body">
-                      <h3 class="dateText" id="day-4-date"></h3>
-                      <p>
-                        <img class="weathericon" id="icon-4">
-                      </p>
-                      <p>Temp: <span class="tempText" id="day-4-temp"></span>
-                      </p>
-                      <p>Wind: <span class="windText" id="day-4-wind"></span>
-                      </p>
-                      <p>Humidity: <span class="humidityText" id="day-4-humidity"></span>
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-2">
+              <div class="card card-style">
+                <div id="day-4-div" class="card-body">
+                  <h3 class="dateText" id="day-4-date"></h3>
+                  <p>
+                    <img class="weathericon" id="icon-4">
+                  </p>
+                  <p>Temp: <span class="tempText" id="day-4-temp"></span>
+                  </p>
+                  <p>Wind: <span class="windText" id="day-4-wind"></span>
+                  </p>
+                  <p>Humidity: <span class="humidityText" id="day-4-humidity"></span>
+                  </p>
                 </div>
-                <div class="col-12 col-md-2">
-                  <div class="card card-style">
-                    <div id="day-5-div" class="card-body">
-                      <h3 class="dateText" id="day-5-date"></h3>
-                      <p>
-                        <img class="weathericon" id="icon-5">
-                      </p>
-                      <p>Temp: <span class="tempText" id="day-5-temp"></span>
-                      </p>
-                      <p>Wind: <span class="windText" id="day-5-wind"></span>
-                      </p>
-                      <p>Humidity: <span class="humidityText" id="day-5-humidity"></span>
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-2">
+              <div class="card card-style">
+                <div id="day-5-div" class="card-body">
+                  <h3 class="dateText" id="day-5-date"></h3>
+                  <p>
+                    <img class="weathericon" id="icon-5">
+                  </p>
+                  <p>Temp: <span class="tempText" id="day-5-temp"></span>
+                  </p>
+                  <p>Wind: <span class="windText" id="day-5-wind"></span>
+                  </p>
+                  <p>Humidity: <span class="humidityText" id="day-5-humidity"></span>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-
-
-
-  </section>
-
-  <!-- Create sub-section for LA,SD,SF -->
-  <section class="sub-section">
-
+    </div>
+  </div>
+  </div> -->
+  <!--
+                    <div id="forecast-one">
+                      <p id="temp-one"></p>
+                    </div>
+                    <div id="forecast-two">
+                      <p id="temp-two"></p>
+                    </div>
+                    <div id="forecast-three">
+                      <p id="temp-three"></p>
+                    </div>
+                    <div id="forecast-four">
+                      <p id="temp-four"></p>
+                    </div>
+                    <div id="forecast-five">
+                      <p id="temp-five"></p> -->
+  <!-- </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section> -->
+  <!-- Create sub-section for CARDS -->
+  <section id="card" class="sub-section">
     <!-- restaurants card -->
-    <div class="card is-flex">
-      <div class="card-content">
-      <h2 class ="card-header" id="city-restaurant"></h2>
-      <a id="eat-url" target="_blank">
-        <img class="card-image" id="eat-img"></img>
-      </a>
-      
+    <div class="card is-centered">
+      <div class="card-content" id="card1">
+        <h2 class="card-header" id="city-restaurant"></h2> <br><br>
+        <a id="eat-url" target="_blank">
+          <img class="card-image" id="eat-img"></img>
+        </a>
         <h3 id="eat-name"></h3>
         <p id="eat-category"></p>
         <p id="eat-rating"></p>
         <p id="eat-price"></p>
       </div>
-      <button id="eat-refresh">Not Interested? Click to refresh</button>
+      <button class="button is-danger is-rounded is-responsive" id="eat-refresh">Not Interested? Click to
+        refresh</button>
+      <!-- <button id="eat-refresh">Not Interested? Click to refresh</button> -->
     </div>
-
     <!-- Play card -->
-    <div class="card square">
-      <h2>Top Rated Activities</h2>
-      <div id="play-one">      
-        <a id="play-url-one" target="_blank">
-          <img id="play-img-one"></img>
-        </a>
-        <h3 id="play-name-one"></h3>
-        <p id="play-rating-one"></p>
-        <p id="play-price-one"></p>
+    <div class="card is-centered">
+      <div class="card-content">
+        <h4>Top Rated Activities</h4> <br>
+        <div id="play-one">
+          <a id="play-url-one" target="_blank">
+            <img id="play-img-one"></img>
+          </a>
+          <h3 id="play-name-one"></h3>
+          <p id="play-rating-one"></p>
+          <p id="play-price-one"></p>
+        </div>
       </div>
-
-      <div id="play-two">      
-        <a id="play-url-two" target="_blank">
-          <img id="play-img-two"></img>
-        </a>
-        <h3 id="play-name-two"></h3>
-        <p id="play-rating-two"></p>
-        <p id="play-price-two"></p>
-      </div>  
-      <div id="play-three">      
-        <a id="play-url-three" target="_blank">
-          <img id="play-img-three"></img>
-        </a>
-        <h3 id="play-name-three"></h3>
-        <p id="play-rating-three"></p>
-        <p id="play-price-three"></p>
+    </div> <br><br>
+    <div class="card is-centered">
+      <div class="card-content">
+        <div id="play-two">
+          <a id="play-url-two" target="_blank">
+            <img id="play-img-two"></img>
+          </a>
+          <h3 id="play-name-two"></h3>
+          <p id="play-rating-two"></p>
+          <p id="play-price-two"></p>
+        </div>
       </div>
-    </div>
-
+    </div><br><br>
+    <div class="card is-centered">
+      <div class="card-content">
+        <div id="play-three">
+          <a id="play-url-three" target="_blank">
+            <img id="play-img-three"></img>
+          </a>
+          <h3 id="play-name-three"></h3>
+          <p id="play-rating-three"></p>
+          <p id="play-price-three"></p>
+        </div>
+      </div>
+    </div><br><br>
     <!-- hotel card -->
-    <div class="card">
-      <h2 id="city-hotel"></h2>
-
-      <a id="hotel-url" target="_blank">
-        <img id="hotel-img" /></img>
-      </a>
-      <h3 id="hotel-name"></h3>
-      <p id="hotel-rating"></p>
-      <p id="hotel-price"></p>
+    <div class="card is-centered">
+      <div class="card-content">
+        <h2 id="city-hotel"></h2> <br>
+        <h5 id="hotel-name"></h5>
+        <a id="hotel-url" target="_blank">
+          <img id="hotel-img" /></img>
+        </a>
+        <!-- changed from  <p> to <h4> and <h5> for dark mode styling -->
+        <h6 id="hotel-rating">Rating: </h6>
+        <h7 id="hotel-price">Price: </h7>
+      </div>
     </div>
-
+    <!-- </div>
+    </div> -->
   </section>
-  
 </body>
-
-  <footer id="footer">
-
-    <p>eps@gmail.com
+<!-- <footer class="car is-flex" id="footer">
+  <p>eps@gmail.com
+    <br />
+    (999) 999-9999
+  </p>
+</footer> -->
+<!-- Bulma Footer -->
+<footer class="footer" id="footer">
+  <div class="content has-text-centered">
+    <p1>eps@gmail.com
       <br />
       (999) 999-9999
-    </p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./asset/js/config.js"></script>
-  <script src="./asset/js/script.js"></script>
-  <script src="./asset/js/first-page.js"></script>
-
-
+    </p1>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./asset/js/config.js"></script>
+<script src="./asset/js/script.js"></script>
+<!-- <script src="./asset/js/first-page.js"></script> -->
 </html>

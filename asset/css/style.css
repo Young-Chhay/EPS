@@ -1,58 +1,142 @@
-/* * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial;
-    margin: 0;
-  }
-  
-  header {
-    padding: 60px;
-    text-align: center;
-    background: #13293d;
-    color: #fff;
-  }
-  
-  .card {
-    border-style: solid;
-    border-width: 1px;
-    padding: 10px;
-    float: left;
-    width: 25%;
-  }
-  
-  .card header {
-    padding: 20px;
-  }
-  
-  .card p {
-    text-align: center;
-  }
-  
-  .card img {
-    width: 100%;
-    max-height: 200px;
-  }
-  
-  /* Cards are split into two columns at 992px or smaller */
-  /* @media screen and (max-width: 992px) {
-    .card {
-      width: 50%;
-    }
-    /* Change the header color */
-    /* header {
-      background: #772014;
-    }
-  }
-   */ 
-  /* Cards are stacked on top of each other at 768px or smaller */
-  /* @media screen and (max-width: 768px) {
-    .card {
-      width: 100%;
-    } */
-    /* Change the header color */
-    /* header {
-      background: #8ac4ff;
-    }
-  } */
+body {
+  transition: 0.3s;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(241, 239, 239);
+  color: rgb(57, 57, 57);
+}
+a {
+  color: rgb(79, 4, 183);
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 300;
+}
+p {
+  margin: 0px;
+  font-size: 20px;
+}
+h8 {
+  font-size: 25px;
+  font-weight: 500;
+}
+.dark p1 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.dark p2 {
+  color: rgb(255, 255, 255);
+  /* font-size: 20px; */
+}
+.dark p {
+  color: black;
+}
+.dark h2,
+h4,
+h5,
+h6,
+h7 {
+  color: rgb(255, 255, 255);
+}
+.dark h8 {
+  color: rgb(255, 255, 255);
+}
+.dark h3 {
+  color: rgb(255, 255, 255);
+}
+.dark .timeStamp {
+  color: rgb(12, 11, 11);
+}
+.dark .card-content {
+  background-color: rgb(57, 57, 57);
+}
+/* .dark card2 {
+  background-color: rgb(255, 255, 255);
+} */
+h2 {
+  font-stretch: wider;
+  font-size: 25px;
+  font-weight: 500;
+}
+h3 {
+  font-stretch: wider;
+  font-size: 25px;
+  font-weight: 500;
+}
+h4 {
+  font-stretch: wider;
+  font-size: 25px;
+  font-weight: 500;
+}
+h5 {
+  font-stretch: wider;
+  font-size: 25px;
+  font-weight: 500;
+}
+h6 {
+  font-stretch: wider;
+  font-size: 20px;
+  font-weight: 500;
+}
+h7 {
+  font-stretch: wider;
+  font-size: 20px;
+  font-weight: 500;
+}
+.dark a {
+  color: pink;
+}
+/* Make sure the switch for dark mode is always on the right */
+header {
+  display: flex;
+  justify-content: right;
+  padding: 0px;
+}
+/* Create a light and dark mode switch relative to the page instead of using flex display*/
+.switch {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(39, 38, 38);
+  position: relative;
+}
+.flicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+/* Create a "dark class" used in js*/
+.dark {
+  background-color: rgb(57, 57, 57);
+  transition: 0.3s;
+}
+.moon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 0 rgb(168, 128, 227);
+  position: absolute;
+  top: 5px;
+  left: 45px;
+}
+/* Get the element class "dark", and look for child with the class name "flicker" */
+/* Class "dark" is added from javascript */
+.dark .flicker {
+  transform: translateX(40px);
+}
+/* Make sure all the text changes so white when in dark mode */
+.dark>* {
+  color: rgb(255, 255, 255)
+}
+.dark .square {
+  background-color: rgb(71, 71, 71);
+}
+/* .dark .sub-section {
+  background-color: rgb(28, 28, 28);
+} */
+.dark footer {
+  background-color: rgb(28, 28, 28);
+}
