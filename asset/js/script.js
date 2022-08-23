@@ -2,8 +2,6 @@
 moment(Date);
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 
-// Moved api key to config file for security. Each member MUST DO 
-// Kevin - weather apiKey = "d4336a7fa9f7843bf43a971a6d63d529";
 var searchButton = $("btn");
 var searchInput = "";
 
@@ -12,17 +10,6 @@ var liveWeather = $(".weathericon");
 var liveTempEl = $("#todaytemp");
 var currentDate = moment().format("M/D/YYYY");
 var cityName = "";
-var forecastDetails = $('#forecast-details')
-var forecastOne = $('#forecast-one')
-var forecastTwo = $('#forecast-two')
-var forecastThree = $('#forecast-three')
-var forecastFour = $('#forecast-four')
-var forecastFive = $('#forecast-five')
-var tempOne = $('#temp-one')
-var tempTwo = $('#temp-two')
-var tempThree = $('#temp-three')
-var tempFour = $('#temp-four')
-var tempFive = $('#temp-five')
 
 // 5 day forecast display
 var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
@@ -38,6 +25,7 @@ var eatUrlEl = $("#eat-url")
 var eatRefresh = $("#eat-refresh")
 
 // Play activity variables 
+var playHeaderEl = $("#play-header")
 var playNameOneEl = $("#play-name-one")
 var playCategoryOneEl = $('#play-category-one')
 var playImgOneEl = $("#play-img-one")
@@ -58,16 +46,7 @@ var playImgThreeEl = $("#play-img-three")
 var playRatingThreeEl = $("#play-rating-three")
 var playPriceThreeEl = $("#play-price-three")
 var playUrlThreeEl = $("#play-url-three")
-
-// Indoor activity variables
-// var cityIndoorEl = $('#city-indoor')
-// var indoorNameEl = $('#indoor-name')
-// var indoorCategoryEl = $('#indoor-category')
-// var indoorImgEl = $("#indoor-img")
-// var indoorRatingEl = $("#indoor-rating")
-// var indoorPriceEl = $("#indoor-price")
-// var indoorUrlEl = $("#indoor-url")
-var switchElement = $('#switch')
+var playRefresh = $("#play-refresh")
 
 // Stay variables
 var cityHotelEl = $('#city-hotel')
@@ -78,201 +57,138 @@ var hotelPriceEl = $("#hotel-price")
 var hotelUrlEl = $("#hotel-url")
 var hotelRefresh = $("#hotel-refresh")
 
-var savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
-
 var searchFormEl = $('#search-form');
 
-function handleSearchFormSubmit(event) {
-  event.preventDefault();
+// Search button feature
+function getWeather (city) {
 
-  var searchInputVal = $('#search-input').val();
+    // live weather
+    // var currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + weatherApi.key + "&units=imperial";
+    // 5 day forecast
+    var cityFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&Appid=" + weatherApi.key + "&units=imperial";
 
-  if (!searchInputVal) {
-    return;
-  } else {
-
-  var city = searchInputVal
-  console.log(city);
-  localStorage.setItem('cities', city);
-  restaurantYelpApi(city);
-  hotelYelpApi(city);
-  // outdoorYelpApi(city);
-  indoorYelpApi(city);
-  }
-}
-
-searchFormEl.submit(handleSearchFormSubmit);
-
-// var weathersearchUrl = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}'
-
-function getCities () {
-  // loading the data onto HMTL page using ForLoop
-  for (var i = 0; i < savedCities.length; i++) {
-
-      var city = savedCities[i];
-      var cityNameEl = $("<li>");
-      cityNameEl.addClass("list-group-item btn btn-primary col-12 btn-style btn-recent");
-      cityNameEl.text(city);
-
-      $(".list-group").append(cityNameEl);
-  }
-}
-
-// Key count for local storage 
-var cityCount = 0;
-
-// Search button click event
-// document.getElementById("formid").addEventListener('submit', function(event){
-//     event.preventDefault();
-//     searchInput = $(".input").val();
-//     var weatherContainer = document.getElementById("weather")
-//     weather.scrollIntoView()
-
-//         // Storing New Cities into local storage with the old Cities
-//         var previouslySavedCities = JSON.parse(localStorage.getItem("savedCities")) || []
-//         previouslySavedCities.push(searchInput)
-//         localStorage.setItem("savedCities", JSON.stringify(previouslySavedCities))
-// })
-// }
-
-// Get city's today forecast
-// function getWeather (city) {
-//     // live weather
-//     var currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + weatherApi.key + "&units=imperial";
-
-//     if (city == "") {
-//         // console.log(searchCity);
-//     } else {
-//         $.ajax({
-//             method: "GET",
-//             url: currentWeather
-
-//         }).then(function (response) {
-//             // console.log(response.name);
-//             var cityName = $(".list-cities");
-//             cityName.append("<li>" + response.name + "</li>");
-//             // Local storage
-//             var local = localStorage.setItem(cityCount, response.name);
-//             cityCount = cityCount + 1;
-
-//             // current weather data 
-//             var currentForecast = $(".currentForecast").append("<div>");
-//             currentForecast.empty();
-//             var currentCity = currentForecast.append("<p>");
-//             currentForecast.append(currentCity);
-
-//             // Adjust Date 
-//             var timeUTC = new Date(response.dt * 1000);
-//             currentCity.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
-//             currentCity.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
-
-//             // temperature input
-//             var liveTemp = currentCity.append("<p>");
-//             currentCity.append(liveTemp);
-//             liveTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
-
-//         });
-//     };
-//   }
-
-// function getSavedCityWeather () {
-//     getUserLocation($(this).text())
-// }
+    fetch(cityFiveDay)
+    .then(function (response) { 
+      if (response.ok) {
+        response.json().then(function (fiveDayResponse) {
+   
+         // 5 day display forecast array
+         var day = [0, 8, 16, 24, 32];
+         // var fiveDayForecast = $(".fiveDayForecast");
+         var fiveDayDisplay = $(".fiveDayOne");
+         fiveDayDisplay.empty();
+         // weather forecast and dates for the next 5 days
+         day.forEach(function (i) {
+           var FiveDayTimeUTC1 = new Date(fiveDayResponse.list[i].dt * 1000);
+           FiveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
+           fiveDayDisplay.append("<div class= fiveDayColor>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${fiveDayResponse.list[i].weather[0].icon}@2x.png">`
+           + "<p>" + "Temperature: " + fiveDayResponse.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + fiveDayResponse.list[i].main.humidity + "%" + "</p>"
+           + "<p>" + "Wind Speed: " + fiveDayResponse.list[i].wind.speed + "</p>" + "</div>");
+          });
+    })
+    } else {
+      alert('Error: ' + fiveDayResponse.statusText);
+    }
+    })
+    .catch(function (e) {
+    console.log(e);
+    });
+    }
 
 // get city search for user location
-// function getCityCoord(city) {
-//         // Make fetch request
-//     // Get location lon and lat
-//     fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + weatherApi.key).then(function(response) {
+function getCityCoord(city) {
+        // Make fetch request
+    // Get location lon and lat
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + weatherApi.key).then(function(response) {
         
-//         // Check for valid response
-//         if (response.ok) {
-//             response.json().then(function(coordData) {
+        // Check for valid response
+        if (response.ok) {
+            response.json().then(function(coordData) {
                 
-//                 // Get lat and lon of city to later get city weather
-//                 var lat = coordData[0].lat;
-//                 var lon = coordData[0].lon;
-//                 cityName = coordData[0].name;
+                // Get lat and lon of city to later get city weather
+                var lat = coordData[0].lat;
+                var lon = coordData[0].lon;
+                cityName = coordData[0].name;
 
-//                 // Call function to get values
-//                 getCityWeather(lat, lon);
-//             });
-//         } else {
-//             // To do: replace alert with another prompt that isn't Window or console
-//             alert("Try Again, city not found");
-//         }
-//     }).catch(function(error) {
-//         // To do: replace alert with another prompt that isn't Window or console
-//         alert("Weather Unavailable");
-//     });
+                // Call function to get values
+                getCityWeather(lat, lon);
+            });
+        } else {
+            // To do: replace alert with another prompt that isn't Window or console
+            alert("Try Again, city not found");
+        }
+    }).catch(function(error) {
+        // To do: replace alert with another prompt that isn't Window or console
+        alert("Weather Unavailable");
+    });
 
 
-// };
+};
 
-// function getCityWeather(lat, lon) {
-//     var weatherApiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=" + weatherApi.key;
+function getCityWeather(lat, lon) {
+    var weatherApiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=imperial&appid=" + weatherApi.key;
 
-//     fetch(weatherApiUrl).then(function(response) {
-//         if (response.ok) {
-//             response.json().then(function(weatherData) {
+    fetch(weatherApiUrl).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(weatherData) {
                 
-//               console.log(weatherData);
+              console.log(weatherData);
 
-//                 // City & date
-//                 var currentCityNameEl = $(".weather-title");
-//                 currentCityNameEl.text("Weather Forecast for " + cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                // City & date
+                var currentCityNameEl = $(".weather-title");
+                currentCityNameEl.text("Weather Forecast for " + cityName.charAt(0).toUpperCase() + cityName.slice(1));
 
-//                 // TO DO: Weather Icon?
-//                 // var liveWeatherIconEl = $("#current-icon");
-//                 // liveWeatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + "@2x.png")
+                // TO DO: Weather Icon?
+                // var liveWeatherIconEl = $("#current-icon");
+                // liveWeatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + "@2x.png")
 
-//                 // var liveTemp = currentCity.append("<p>");
-//                 // currentCity.append(liveTemp);
-//                 // liveTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
+                // var liveTemp = currentCity.append("<p>");
+                // currentCity.append(liveTemp);
+                // liveTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
 
-//                 // // Current Temp
-//                 // var liveTempEl = $("#todaytemp");
-//                 // liveTempEl.text(data.current.temp + "F");
-//                 var fiveDayForecast = weatherData.daily
-//                 console.log(fiveDayForecast)
-//                 for (var i = 0; i < fiveDayForecast.length - 3; i++) {
-//                 var date = new Date(fiveDayForecast[i].dt * 1000).toLocaleDateString("en-US")
-//                 console.log(date)
-//                 }
-//                 // Day 0
-//                 var date1 = new Date(fiveDayForecast[0].dt * 1000).toLocaleDateString("en-US")
+                // // Current Temp
+                // var liveTempEl = $("#todaytemp");
+                // liveTempEl.text(data.current.temp + "F");
+                var fiveDayForecast = weatherData.daily
+                console.log(fiveDayForecast)
+                for (var i = 0; i < fiveDayForecast.length - 3; i++) {
+                var date = new Date(fiveDayForecast[i].dt * 1000).toLocaleDateString("en-US")
+                console.log(date)
+                }
+                // Day 0
+                var date1 = new Date(fiveDayForecast[0].dt * 1000).toLocaleDateString("en-US")
             
-//                 // var temp1 = fiveDayForecast[0].daily[0].temp.day
-//                 // forecastOne.append(`<h3>${date1}</h3>`)
-//                 // forecastOne.append(`<p>Temp: ${temp1}</p>`)
-//                 // todaycontainer.html("");
+                // var temp1 = fiveDayForecast[0].daily[0].temp.day
+                // forecastOne.append(`<h3>${date1}</h3>`)
+                // forecastOne.append(`<p>Temp: ${temp1}</p>`)
+                // todaycontainer.html("");
                 
-//                 // for (var i = 0; i < fiveDayForecast.length - 3; i++) {
-//                 //     // converting Unix to date
-//                 //     var humanDateFormat = new Date(fiveDayForecast.dt).toLocaleDateString("en-US");
+                // for (var i = 0; i < fiveDayForecast.length - 3; i++) {
+                //     // converting Unix to date
+                //     var humanDateFormat = new Date(fiveDayForecast.dt).toLocaleDateString("en-US");
                 
-//                 //     console.log(humanDateFormat)
-//                 //     // Forecast Day 1
-//                 //     forecastOne.append(`<h3>${humanDateFormat}</h3>`)
-//                 //     tempOne.text(`Temp: `)
-//                 //     // Variables to dynamically create the classes into HTML
-//                 //     // var card = $("<div>").addClass("forecast-card");
-//                 //     // var cardbody = $("<div>").addClass("forecast-body");
-//                 //     // var cardheader = $("<div>").addClass("h3");
-//                 //     // var weatheri = $("<img>").addClass("card-header-icon");
-//                 //     // var temptext = $("<div>").addClass("h3");
+                //     console.log(humanDateFormat)
+                //     // Forecast Day 1
+                //     forecastOne.append(`<h3>${humanDateFormat}</h3>`)
+                //     tempOne.text(`Temp: `)
+                //     // Variables to dynamically create the classes into HTML
+                //     // var card = $("<div>").addClass("forecast-card");
+                //     // var cardbody = $("<div>").addClass("forecast-body");
+                //     // var cardheader = $("<div>").addClass("h3");
+                //     // var weatheri = $("<img>").addClass("card-header-icon");
+                //     // var temptext = $("<div>").addClass("h3");
                                 
 
-//                 //     // getting the data from API
-//                 //     // cardheader.text(humanDateFormat);
-//                 //     // weatheri.attr("src", "https://openweathermap.org/img/wn/" + forecastarray[i].weather[0].icon + ".png");
-//                 //     // temptext.text("Temp: " + forecastarray[i].temp.day + " F");
+                //     // getting the data from API
+                //     // cardheader.text(humanDateFormat);
+                //     // weatheri.attr("src", "https://openweathermap.org/img/wn/" + forecastarray[i].weather[0].icon + ".png");
+                //     // temptext.text("Temp: " + forecastarray[i].temp.day + " F");
 
-//                 // }        
-//             })
-//         }
-//     })
-// }
+                // }        
+            })
+        }
+    })
+}
 
 // $("#citiesList").on("submit", ".list-group-item", getSavedCityWeather)
 
@@ -346,11 +262,8 @@ function outdoorYelpApi(city) {
   });
   }
 
-  // Fetch indoor activity results
-function indoorYelpApi(city) {
-
-   // TO DO: Randomize 3 indoor and define
-   var randomIndoorCategories = getMultipleRandom(indoorCategories, 3);
+function generateIndoorUrl (city) {
+  var randomIndoorCategories = getMultipleRandom(indoorCategories, 3);
 
   // Assign each category a variable
   var indoorOne = randomIndoorCategories[0]
@@ -358,7 +271,11 @@ function indoorYelpApi(city) {
   var indoorThree = randomIndoorCategories[2]
 
    var indoorSearchUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=' + city + '&categories=' + indoorOne + '&categories=' + indoorTwo + '&categories=' + indoorThree
-   console.log(indoorSearchUrl)
+   return indoorSearchUrl;
+}
+
+  // Fetch indoor activity results
+function indoorYelpApi(indoorSearchUrl) {
 
   fetch(indoorSearchUrl, {
     method: 'GET',
@@ -370,7 +287,6 @@ function indoorYelpApi(city) {
   .then(function (response) { 
   if (response.ok) {
     response.json().then(function (indoorResult) {
-      console.log(indoorResult);
       renderIndoor(indoorResult);
       });
   } else {
@@ -381,6 +297,8 @@ function indoorYelpApi(city) {
   console.log(e);
   });
 }
+
+
 
 // Toggle button to swap to indoors and outdoors
 function toggleActivity (event) {
@@ -506,7 +424,6 @@ function renderHotel (stayResults) {
   var hotelPrice = hotelList[rndHotelIndex].price
   var hotelUrl = hotelList[rndHotelIndex].url
   
-  // diplay city name into eat Card (placeholder Irvine)
   cityHotelEl.text(`Top Hotels`)
 
   // display name into hotel card 
@@ -544,6 +461,8 @@ function renderOutdoor (outdoorResult) {
   var outdoorRatingOne = outdoorList[0].rating
   var outdoorPriceOne = outdoorList[0].price
 
+  playHeaderEl.text('Top Rated Activities')
+
   // display activity name into play card
   playNameOneEl.text(outdoorNameOne);
 
@@ -565,7 +484,6 @@ function renderOutdoor (outdoorResult) {
   } else {
   playPriceOneEl.text(`Price: ${outdoorPriceOne}`);
   }
-
     // Outdoor activity two
   var outdoorNameTwo = outdoorList[1].name
   var outdoorCategoryTwo = outdoorList[1].categories[0].title
@@ -608,7 +526,7 @@ function renderOutdoor (outdoorResult) {
 
   playRatingThreeEl.text(`Rating: ${outdoorRatingThree}`);
 
-  if (!outdoorPriceOne) {
+  if (!outdoorPriceThree) {
     playPriceThreeEl.text("");
   } else {
   playPriceThreeEl.text(`Price: ${outdoorPriceThree}`);
@@ -700,11 +618,26 @@ function renderIndoor (indoorResult) {
   }
 };
 
+function handleSearchFormSubmit(event) {
+  event.preventDefault();
 
-function fetchUrls (city) {
-  hotelYelpApi(city);
+  var searchInputVal = $('#search-input').val();
+
+  if (!searchInputVal) {
+    return;
+  } else {
+
+  var city = searchInputVal
+  localStorage.setItem('cities', city);
+  getWeather(city);
   restaurantYelpApi(city);
-  indoorYelpApi(city);
+  hotelYelpApi(city);
   outdoorYelpApi(city);
+  }
 }
 
+searchFormEl.submit(handleSearchFormSubmit);
+playRefresh.click()
+// playRefresh.click(console.log(indoorSearchUrl));
+// generate fetch URL with random indoors, return fetch URL string, wait for button click, upon click run fetch URL and then render 
+// separate the URL generation from indoorYelpApi. 

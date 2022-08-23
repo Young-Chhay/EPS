@@ -15,15 +15,12 @@ p {
   margin: 0px;
   font-size: 20px;
 }
-h8 {
-  font-size: 25px;
-  font-weight: 500;
-}
-.dark p1 {
+
+.dark {
   color: rgb(255, 255, 255);
   font-size: 20px;
 }
-.dark p2 {
+.dark {
   color: rgb(255, 255, 255);
   /* font-size: 20px; */
 }
@@ -33,11 +30,11 @@ h8 {
 .dark h2,
 h4,
 h5,
-h6,
-h7 {
+h6
+ {
   color: rgb(255, 255, 255);
 }
-.dark h8 {
+.dark {
   color: rgb(255, 255, 255);
 }
 .dark h3 {
@@ -77,11 +74,7 @@ h6 {
   font-size: 20px;
   font-weight: 500;
 }
-h7 {
-  font-stretch: wider;
-  font-size: 20px;
-  font-weight: 500;
-}
+
 .dark a {
   color: pink;
 }
