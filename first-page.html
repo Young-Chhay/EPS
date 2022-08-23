@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Eat Play Stay</title>
-  <!-- Link to Bulma fro Framework -->
+
+  <!-- Link to Bulma framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <link rel="stylesheet" href="./asset/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-  <div class="content has-text-centered"><br>
-    <p2 class="title">Eat Play Stay</p2>
-    <header>
-      <!-- <div class="content has-text-centered">
-      <h1 class="title">Eat Play Stay</h1> -->
-      <!-- Create a Light and Dark Mode switch -->
-      <div class="switch">
-        <div class="flicker"></div>
-        <div class="moon"></div>
-      </div>
-  </div>
+  <header>
+
+    <!-- Create a Light and Dark Mode switch -->
+    <div id="switch-element" class="switch">
+      <div class="flicker"></div>
+      <div class="moon"></div>
+    </div>
   </header>
   <section class="hero is-light is-half is-offset-one-quarter">
     <!-- <div class="card-header-title"> -->
@@ -33,10 +30,11 @@
     <div class="has-text-centered">
       <form id="search-form" class="form w-100">
         <input id="search-input" class="form-input w-100" type="text" placeholder="Enter City">
-        <button class="">&rarr; Search</button><br><br>
-        <!-- <a href="#footer">Click here to search for a city</a> <br><br><br> -->
+
+        <!-- Searchbar -->
+        <button class="btn btn-block btn-danger">&rarr; Search</button><br><br>
         <div class="menu" id="menu">
-          <!-- <a href="index.html">Home</a> <br> -->
+
           <a href="#footer">About</a> <br>
           <a href="#footer">Contact</a>
 
@@ -45,8 +43,6 @@
                 <p class="weather-title title is-centered is-size-3 has-text-grey-dark container">
                   Weather Forecast
                 </p>
-                <!-- <h4>Current Time &amp; Date: <span
-                  id="time-display"> 00:00:00 </span></h4> -->
                   <p id="currentDay" class="lead"></p>
                   <p style="color:black;">Get ready for your vacation and check the weather!</p>
                  
@@ -59,7 +55,7 @@
             </div>
         </div>
 
-<!-- displays 5 day forecast-->
+<!-- Displays 5 day forecast-->
 <h5 class="card-title mt-2 mr-5">5-Day Forecast: </h5>
 <div class="row">
     <div class="col fiveDayOne">
@@ -200,31 +196,53 @@
         <p id="play-rating-three"></p>
         <p id="play-price-three"></p>
       </div>
+
+      <div id="play-four">      
+        <a id="play-url-four" target="_blank">
+          <img id="play-img-four"></img>
+        </a>
+        <h3 id="play-name-four"></h3>
+        <p id="play-rating-four"></p>
+        <p id="play-price-four"></p>
+      </div>
+
+      <div id="play-five">      
+        <a id="play-url-five" target="_blank">
+          <img id="play-img-five"></img>
+        </a>
+        <h3 id="play-name-five"></h3>
+        <p id="play-rating-five"></p>
+        <p id="play-price-five"></p>
+      </div>  
+      <div id="play-six">      
+        <a id="play-url-six" target="_blank">
+          <img id="play-img-six"></img>
+        </a>
+        <h3 id="play-name-six"></h3>
+        <p id="play-rating-six"></p>
+        <p id="play-price-six"></p>
+      </div>
     </div>
     
     <!-- hotel card -->
-    <div class="card is-centered">
-      <div class="card-content">
-        <h2 id="city-hotel"></h2> <br>
-        <h5 id="hotel-name"></h5>
-        <a id="hotel-url" target="_blank">
-          <img id="hotel-img" /></img>
-        </a>
-        <!-- changed from  <p> to <h4> and <h5> for dark mode styling -->
-        <h6 id="hotel-rating">Rating: </h6>
-        <h7 id="hotel-price">Price: </h7>
-      </div>
+    <div class="card">
+      <h2 id="city-hotel"></h2>
+      <a id="hotel-url" target="_blank">
+        <img id="hotel-img" /></img>
+      </a>
+      <h3 id="hotel-name"></h3>
+      <p id="hotel-rating"></p>
+      <p id="hotel-price"></p>
     </div>
-    <!-- </div>
-    </div> -->
+
   </section>
 </body>
 
   <footer id="footer">
 
-    <p>eps@gmail.com
+    <p>https://github.com/Young-Chhay/EPS
       <br />
-      (999) 999-9999
+      Insert Link Here
     </p>
   </footer>
 
@@ -232,6 +250,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./asset/js/config.js"></script>
   <script src="./asset/js/script.js"></script>
-  <script src="./asset/js/first-page.js"></script>
-
 </html>
