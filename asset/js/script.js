@@ -12,7 +12,7 @@ var currentDate = moment().format("M/D/YYYY");
 var cityName = "";
 
 // 5 day forecast display
-var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
+// var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
 
 // eat variables
 var cityRestaurantEl = $('#city-restaurant')

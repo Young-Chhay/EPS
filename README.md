@@ -21,13 +21,13 @@ Eat Play Stay is a search data base where users can plan their vacations using t
 * Yelp Review API
 
 ## Process:
-This group project was collaborated by Jeffrey Sun, Young Chhay, Kevin Ng & Drum Holliday  The tasks were divded equally amongst all members.
+This group project was collaborated by Jeffrey Sun, Young Chhay, Kevin Ng & Drum Holliday  The tasks were divided equally amongst all members.
 * Jeffrey researched the Yelp API keys and designed the functionality in the JSS.
 * Young orchestrated the Github structure, Terminal push/pulls and Math.random functions.
 * Kevin contributed to the framework with the html + basic styling in css as well as the weather API key functionality.
 * Drum provided the pictures as well as styling in css & bulma, and also made edits and corrections in the JSS.
   
-Although the project seemed overwhelming at first, everyone helped each other and filled in the gaps when needed. Our team work well together and was very attentive to the details with communication and persistence. 
+Although the project seemed overwhelming at first, everyone helped each other and filled in the gaps when needed. Our team worked well together and everyone was very attentive to the details with communication and persistence. 
 
 ## Challenges 
 * Resolving Github merge conflicts 

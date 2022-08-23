@@ -133,3 +133,11 @@ header {
 .dark footer {
   background-color: rgb(28, 28, 28);
 }
+
+/* .hero-body, .weather, .hotel, .hotel-container, .getaway-section {
+  background-image: url("../images/Beach\ Vacation\ Packing\ List-2021_GettyImages-1030311160.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 80%;
+} */
