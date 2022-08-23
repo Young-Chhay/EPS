@@ -3,7 +3,7 @@
 * ['Eat Play Stay - Github'](https://github.com/Young-Chhay/EPS)
 * ['Eat Play Stay - Live Link'] (https://young-chhay.github.io/EPS/)
 
-<!-- screen shots here -->
+![](./asset/images/young-chhay.github.io_EPS_.png)
 
 ## Description
 Planning your next vacation? Need to step away from work for a bit? Eat Play Stay will help you get the results you need. Find the best hotels, restaurants, activites and weather forecasts by location and get away.
