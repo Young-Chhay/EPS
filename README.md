@@ -1,7 +1,7 @@
 # Eat Play Stay
 ## Link's
 * ['Eat Play Stay - Github'](https://github.com/Young-Chhay/EPS)
-* ['Eat Play Stay - Live Link'] (https://young-chhay.github.io/EPS/)
+* [Deployed Webpage - EPS](https://young-chhay.github.io/EPS/)
 
 ![](./asset/images/young-chhay.github.io_EPS_.png)
 
