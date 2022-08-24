@@ -56,12 +56,6 @@ Although the project seemed overwhelming at first, everyone helped each other an
 * Yelp.com API
 * OpenWeather API
 
----
-___
-## Project Content
-
-![EPS Website Screenshot](./Assets/Quiz_screenshot.JPG)
-
 =======
 ---
 ___
