@@ -2,8 +2,11 @@
 ## Link's
 * ['Eat Play Stay - Github'](https://github.com/Young-Chhay/EPS)
 * [Deployed Webpage - EPS](https://young-chhay.github.io/EPS/)
+<<<<<<< HEAD
 
 <!-- screen shots here -->
+=======
+>>>>>>> c646299bd90b529b8561800216f9b13fbfe46dcc
 
 ## Description
 Planning your next vacation? Need to step away from work for a bit? Eat Play Stay will help you get the results you need. Find the best hotels, restaurants, activites and weather forecasts by location and get away.
@@ -57,6 +60,7 @@ Although the project seemed overwhelming at first, everyone helped each other an
 * Bulma Documentation
 * Yelp.com API
 * OpenWeather API
+<<<<<<< HEAD
 
 ---
 ___
@@ -64,3 +68,9 @@ ___
 
 ![EPS Website Screenshot](./Assets/Quiz_screenshot.JPG)
 
+=======
+---
+___
+## Project Content
+![](./asset/images/young-chhay.github.io_EPS_.png)
+>>>>>>> c646299bd90b529b8561800216f9b13fbfe46dcc
