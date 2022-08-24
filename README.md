@@ -1,7 +1,7 @@
 # Eat Play Stay
 ## Link's
-* ['Eat Play Stay -Github'](https://github.com/Young-Chhay/EPS)
-* ['Eat Play Stay - Live Link] (EPS live link)
+* ['Eat Play Stay - Github'](https://github.com/Young-Chhay/EPS)
+* [Deployed Webpage - EPS](https://young-chhay.github.io/EPS/)
 
 <!-- screen shots here -->
 
@@ -57,3 +57,10 @@ Although the project seemed overwhelming at first, everyone helped each other an
 * Bulma Documentation
 * Yelp.com API
 * OpenWeather API
+
+---
+___
+## Project Content
+
+![EPS Website Screenshot](./Assets/Quiz_screenshot.JPG)
+
